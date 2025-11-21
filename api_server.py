@@ -124,7 +124,7 @@ def transcribe_audio(audio_path: str) -> dict:
     with open(audio_path, "rb") as file:
         transcription = groq_client.audio.transcriptions.create(
             file=(audio_path, file.read()),
-            model="whisper-large-v3-turbo",
+            model="whisper-large-v3",
             response_format="verbose_json",
             timestamp_granularities=["word", "segment"],
             language="en",
